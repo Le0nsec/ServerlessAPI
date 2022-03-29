@@ -23,11 +23,7 @@ def user_age(age):
     result=[]
     users = db.user.find({'age': int(age)})
     for u in users:
-        id = u['id']
-        username = u['username']
-        age = u['age']
-        score = u['score']
-        result.append({"id":id, "username": username, "age": age, "score": score})
+        result.append({"id": u['id'], "username": u['username'], "age": u['age'], "score": u['score']})
     return json.dumps(result)
 
 
